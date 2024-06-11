@@ -14,7 +14,7 @@ import Signup from "./pages/Signup";
 import PageNotFound from "./pages/PageNotFound";
 import { Provider } from "react-redux";
 import store from "./store";
-
+import "./index.css";
 function App() {
   return (
     <Provider store={store}>
