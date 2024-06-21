@@ -1,14 +1,12 @@
-import Logo from "./Logo";
-import Navigation from "./Navigation";
+import Hero from "./Hero";
+import SideNavigation from "./SideNavigation";
 
 function Header() {
   return (
-    <header className="px-8 py-5 ">
-      <div className="max-w-7xl mx-auto">
-        <Logo />
-        <Navigation />
-      </div>
-    </header>
+    <div className="flex ">
+      <SideNavigation />
+      <Hero />
+    </div>
   );
 }
 
