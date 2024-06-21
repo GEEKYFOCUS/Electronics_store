@@ -1,7 +1,7 @@
 function SignupForm() {
   return (
-    <div className='flex gap-24 items-center justify-between'>
-        <img src="img//signup.png" alt="signup" className='w-[50%]' />
+    <div className='md:flex lg:gap-24 md:gap-12 items-center md:justify-between'>
+        <img src="img/signup.png" alt="signup" className='md:w-[50%]' />
         <div className="m-6">
             <div>
             <h1 className="text-4xl py-3 font-semibold">Create an account</h1>
