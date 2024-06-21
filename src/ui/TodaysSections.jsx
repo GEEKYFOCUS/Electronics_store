@@ -3,10 +3,12 @@ import { todaysProduct } from "../constants/todayProduct";
 import Carousel from "./Carousel";
 import SalesCountDown from "./SalesCountDown";
 import ArrowButton from "./ArrowButton";
+import { useSlider } from "../contexts/Slider";
 
 const items = todaysProduct;
 
 function TodaysSections() {
+  const { items } = useSlider();
   return (
     <section className="mt-8 pt-4 pb-12 border-b   ">
       <h2 className="before:content-['-'] before:mr-4 before:rounded-md before:bg-red-500 before:h-12 before:w-6  before:inline-block   text-red-500 font-bold text-xl ">
@@ -19,7 +21,7 @@ function TodaysSections() {
         <ArrowButton />
       </div>
 
-      <Carousel items={items} />
+      <Carousel items={items} type="today" />
       <div className="text-center mt-8 pb-2 border-b">
         <button className="  text-center text-white bg-red-500 px-4 py-2 rounded-sm font-inter font-[500]">
           View All Products

@@ -2,15 +2,15 @@ import { Outlet } from "react-router-dom";
 // <<<<<<< HEAD
 import Header from "./Header";
 import Footer from "./Footer";
+import NavBar from "./NavBar";
 
 function AppLayout() {
   return (
     <div className="relative min-h-screen flex flex-col">
-      <Header />
+      <NavBar />
       <div className="flex-1 px-8 py-12 overflow-auto">
         <main className="max-w-7xl mx-auto w-full">
-
-{/* import NavBar from "./NavBar";
+          {/* import NavBar from "./NavBar";
 
 function AppLayout() {
   return (
