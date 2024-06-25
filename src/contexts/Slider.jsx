@@ -1,10 +1,15 @@
 import { createContext, useContext, useState } from "react";
 import { todaysProduct } from "../constants/todayProduct";
+import { categoriesProduct } from "../constants/categories";
+import { bestSelling } from "../constants/best-selling";
+import { products } from "../constants/products";
 
 const SliderContext = createContext();
 
 function SliderProvider({ children }) {
   const items = todaysProduct;
+  const categoryItems = categoriesProduct;
+  const product = products;
   const [currentIndex, setCurrentIndex] = useState(0);
   const handlePrevClick = () => {
     setCurrentIndex(
@@ -17,7 +22,15 @@ function SliderProvider({ children }) {
   console.log(items);
   return (
     <SliderContext.Provider
-      value={{ items, currentIndex, handlePrevClick, handleNextClick }}
+      value={{
+        items,
+        categoryItems,
+        bestSelling,
+        product,
+        currentIndex,
+        handlePrevClick,
+        handleNextClick,
+      }}
     >
       {children}
     </SliderContext.Provider>
