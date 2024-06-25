@@ -3,7 +3,7 @@ import { IoSendSharp } from "react-icons/io5";
 
 function Footer() {
   return (
-    <div className="flex md:py-16 md:px-8 justify-around text-white bg-[#000000]">
+    <div className="md:flex md:py-16 px-8 grid grid-cols-2 gap-6 md:gap-0 py-12 justify-around text-white bg-[#000000]">
       <div className="">
         <h1 className="py-2">Exclusive</h1>
         <div className="text-sm text-slate-500 space-y-1">
