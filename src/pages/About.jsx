@@ -7,78 +7,125 @@ import { TbTruckDelivery } from "react-icons/tb";
 import { RiCustomerService2Fill } from "react-icons/ri";
 import { AiTwotoneSafetyCertificate } from "react-icons/ai";
 
-
-
-
 function About() {
-  return <div>
-  <div>
-    <div>
-        <h1>Our Story</h1>
-        <p>Launced in 2015, Exclusive is South Asia’s premier online shopping makterplace with an active presense in Bangladesh. Supported by wide range of tailored marketing, data and service solutions, Exclusive has 10,500 sallers and 300 brands and serves 3 millioons customers across the region. </p>
-        <p>Exclusive has more than 1 Million products to offer, growing at a very fast. Exclusive offers a diverse assotment in categories ranging  from consumer.</p>
-    </div>
-
-    <img src="" alt="" />
-
+  return (
+    <div className="md:my-24 my-10 lg:px-12">
       <div>
-
-        <div>
-            <div><SiHomeassistantcommunitystore /></div>  
+        <div className="md:flex justify-between items-center gap-24">
+          <div className="py-4">
+            <h1 className="text-3xl font-semibold py-4">Our Story</h1>
+            <p className="font text-justify">
+              Launced in 2015, Exclusive is South Asia’s premier online shopping
+              makterplace with an active presense in Bangladesh. Supported by
+              wide range of tailored marketing, data and service solutions,
+              Exclusive has 10,500 sallers and 300 brands and serves 3 millioons
+              customers across the region. Exclusive has more than 1 Million
+              products to offer, growing at a very fast. Exclusive offers a
+              diverse assotment in categories ranging from consumer.
+            </p>
+          </div>
+          <img src="/img/about.png" alt="" className="md:w-[50%]" />
         </div>
-
-        <div>
-            <div><AiOutlineDollar /></div>  
-        </div>
-
-        <div>
-            <div><FaBagShopping /></div>  
-        </div>
-
-        <div>
-            <div><SlLike /></div>  
-        </div>
-  
-    </div>
-
-    {/* Carousel */}
-    <div>
-      <div>
-        <img src="" alt="" />
-        {/* <h1></h1> */}
-      </div>
-      <div>
-        <img src="" alt="" />
-        {/* <h1></h1> */}
-      </div>
-      <div>
-        <img src="" alt="" />
-        {/* <h1></h1> */}
       </div>
 
+      <div className="md:flex grid grid-cols-2 justify-between gap-3 my-16">
+        <div className="border md:p-8 text-center rounded-md hover:bg-[#db4444] hover:text-white transition-all duration-500 cursor-pointer ">
+          <div className="md:p-2 p-4">
+            <SiHomeassistantcommunitystore className="md:size-11 size-8 mx-auto" />
+            <p className="pt-4 font-bold text-3xl">10.5k</p>
+            <p>Sellers active on our site</p>
+          </div>
+        </div>
 
-    </div>
+        <div className="border md:p-8 text-center rounded-md hover:bg-[#db4444] hover:text-white transition-all duration-500 cursor-pointer ">
+          <div className="md:p-2 p-4">
+            <AiOutlineDollar className="md:size-11 size-8 text-center mx-auto" />
+            <p className="pt-4 font-bold text-3xl">33k</p>
+            <p>Monthly Product Sale</p>
+          </div>
+        </div>
 
-    {/* delivery */}
+        <div className="border md:p-8 text-center rounded-md hover:bg-[#db4444] hover:text-white transition-all duration-500 cursor-pointer ">
+          <div className="md:p-2 p-4">
+            <FaBagShopping className="md:size-11 size-8 text-center mx-auto" />
+            <p className="pt-4 font-bold text-3xl">45.5k</p>
+            <p>Customer active in our site</p>
+          </div>
+        </div>
 
-    <div>
-    <TbTruckDelivery />
-    <h2>FREE AND FAST DELIVERY</h2>
-    <p>Free delivery for all orders over $140</p>
-    </div>
-    <div>
-    <RiCustomerService2Fill />
-    <h2>24/7 CUSTOMER SERVICE</h2>
-    <p>Friendly 24/7 customer support</p>
-    </div>
-    <div>
-    <AiTwotoneSafetyCertificate />
-    <h2>MONEY BACK GUARANTEE</h2>
-    <p>We reurn money within 30 days</p>
-    </div>
+        <div className="border md:p-8 text-center rounded-md hover:bg-[#db4444] hover:text-white transition-all duration-500 cursor-pointer ">
+          <div className="md:p-2 p-4">
+            <SlLike className="md:size-11 size-8 text-center mx-auto" />
+            <p className="pt-4 font-bold text-3xl">45.5k</p>
+            <p>Anual gross sale in our site</p>
+          </div>
+        </div>
+      </div>
 
-  </div>
-</div>
+      {/* Carousel */}
+      <div className="flex justify-center gap-8 md:py-12">
+        <div>
+          <img src="/img/image1.png" alt="img" />
+          <div className="py-6">
+            <h1 className="font-semibold md:text-lg">Tom Cruise</h1>
+            <p className="text-sm py-1">Founder & Chairman</p>
+            <img
+              src="img/socialMedia.png"
+              alt=""
+              className="md:w-1/6 w-[40%]"
+            />
+          </div>
+        </div>
+
+        <div>
+          <img src="/img/image2.png" alt="img" />
+          <div className="py-6">
+            <h1 className="font-semibold md:text-lg">Emma Watson </h1>
+            <p className="text-sm py-1">Managing Director</p>
+            <img
+              src="img/socialMedia.png"
+              alt=""
+              className="md:w-1/6 w-[40%]"
+            />
+          </div>
+        </div>
+        <div>
+          <img src="/img/image3.png" alt="img" />
+          <div className="py-6">
+            <h1 className="font-semibold md:text-lg">Will Smith</h1>
+            <p className="text-sm py-1">Product Designer</p>
+            <img
+              src="img/socialMedia.png"
+              alt=""
+              className="md:w-1/6 w-[40%]"
+            />
+          </div>
+        </div>
+      </div>
+
+      {/* delivery */}
+
+      <div className="md:flex text-center space-y-6 md:space-y-0 flex-row justify-center md:gap-12 md:pt-12 pt-10">
+        {/* <div> */}
+        <div>
+          <TbTruckDelivery className="mx-auto size-14 bg-black text-white rounded-full p-2 border-gray-300 border-[6px]" />
+          <h2 className="font-bold pt-4 md:text-lg">FREE AND FAST DELIVERY</h2>
+          <p>Free delivery for all orders over $140</p>
+        </div>
+        {/* </div> */}
+        <div>
+          <RiCustomerService2Fill className="mx-auto size-14 bg-black text-white rounded-full p-2 border-gray-300 border-[6px]" />
+          <h2 className="font-bold pt-4 md:text-lg">24/7 CUSTOMER SERVICE</h2>
+          <p>Friendly 24/7 customer support</p>
+        </div>
+        <div>
+          <AiTwotoneSafetyCertificate className="mx-auto size-14 bg-black text-white rounded-full p-2 border-gray-300 border-[6px]" />
+          <h2 className="font-bold pt-4 md:text-lg">MONEY BACK GUARANTEE</h2>
+          <p>We reurn money within 30 days</p>
+        </div>
+      </div>
+    </div>
+  );
 }
 
 export default About;
