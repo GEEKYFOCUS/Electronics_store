@@ -1,6 +1,28 @@
-import React from "react";
+import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import useLogin from "./useLogin";
 
 function LoginForm() {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const { login, isLoading } = useLogin();
+  function handleSubmit(e) {
+    e.preventDefault();
+    login(
+      {
+        email,
+        password,
+      },
+      {
+        onSettled: () => {
+          setPassword("");
+          setEmail("");
+        },
+      }
+    );
+
+    console.log("user signed in successfully");
+  }
   return (
     <div className="md:flex lg:gap-24 md:gap-12 items-center md:justify-between">
       <img src="img/signup.png" alt="signup" className="md:w-[50%]" />
@@ -10,36 +32,45 @@ function LoginForm() {
           <p className="font-semibold">Enter your details below</p>
         </div>
 
-        <div className="py-4">
-          <input
+        <form onSubmit={handleSubmit}>
+          <div className="py-4">
+            {/* <input
             type="text"
             placeholder="Name"
             name="name"
             id="name"
             className="w-[80%] py-4 border-b-2 outline-none"
-          />
-          <input
-            type="text"
-            placeholder="Email or Phone Number"
-            name="email"
-            id="email"
-            className="w-[80%] py-4 border-b-2 outline-none"
-          />
-          <input
-            type="password"
-            placeholder="Password"
-            name=""
-            id="password"
-            className="w-[80%] py-4 border-b-2 outline-none"
-          />
-        </div>
+            /> */}
+            <input
+              type="text"
+              placeholder="Email or Phone Number"
+              name="email"
+              id="email"
+              className="w-[80%] py-4 border-b-2 outline-none"
+              value={email}
+              disabled={isLoading}
+              onChange={(e) => setEmail(e.target.value)}
+            />
+            <input
+              type="password"
+              placeholder="Password"
+              name="passoword"
+              id="password"
+              autoComplete="password"
+              value={password}
+              disabled={isLoading}
+              onChange={(e) => setPassword(e.target.value)}
+              className="w-[80%] py-4 border-b-2 outline-none"
+            />
+          </div>
 
-        <div className=" flex items-center space-x-4">
-          <button className="bg-[#db4444] py-3 px-10 text-white font-semibold">
-            Log In
-          </button>
-          <p className="font-semibold text-[#db4444]">Forget Password?</p>
-        </div>
+          <div className=" flex items-center space-x-4">
+            <button className="bg-[#db4444] py-3 px-10 text-white font-semibold">
+              Log In
+            </button>
+            <p className="font-semibold text-[#db4444]">Forget Password?</p>
+          </div>
+        </form>
       </div>
     </div>
   );

@@ -1,6 +1,14 @@
 import { Link } from "react-router-dom";
 
 function NewArrivalGrid() {
+  const items = [1, 2, 3, 4, 5, 6, 7, 8];
+  let visibleItems = [];
+  let start = 0;
+  for (let i = 0; i < 2; i++) {
+    console.log(i);
+    visibleItems.push(items[(start + i) % items.length]);
+    console.log(visibleItems);
+  }
   return (
     <div className="py-12 grid grid-cols-[1fr_1fr_1fr_1fr] gap-4 grid-rows-2 h-[40rem] text-white/90">
       <div className=" col-span-2 row-span-2 bg-[url('/img/newarrival1.png')] rounded-md px-12  relative  bg-origin-content  bg-black  bg-no-repeat  bg-auto bg-center ">

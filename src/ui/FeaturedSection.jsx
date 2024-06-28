@@ -1,3 +1,4 @@
+import Delivery from "./Delivery";
 import NewArrivalGrid from "./NewArrivalGrid";
 
 function FeaturedSection() {
@@ -11,6 +12,7 @@ function FeaturedSection() {
         <h2 className="font-inter text-4xl  font-bold mt-2">New Arrival</h2>
       </div>
       <NewArrivalGrid />
+      <Delivery />
     </section>
   );
 }

@@ -11,6 +11,7 @@ export default function Carousel({ items, type }) {
   const { currentIndex } = useSlider();
 
   const [rating, setRating] = useState("");
+  console.log(rating);
 
   const getVisibleItems = () => {
     const start = currentIndex;
@@ -20,7 +21,8 @@ export default function Carousel({ items, type }) {
         visibleItems.push(items[(start + i) % items.length]);
       }
     if (type === "category")
-      for (let i = 0; i < 6; i++) {
+      for (let i = 0; i < 2; i++) {
+        console.log(items.length);
         visibleItems.push(items[(start + i) % items.length]);
       }
     if (type === "products")
@@ -106,7 +108,7 @@ export default function Carousel({ items, type }) {
               className="min-w-full   transition-transform   duration-500 ease-in-out rounded-sm  cursor-pointer"
               key={index}
               style={{
-                transform: index === 7 ? "translateX(-10%)" : " ",
+                transform: index === 6 ? "translateX(-10%)" : " ",
               }}
             >
               {/* //min-w-[15rem]  */}
@@ -257,11 +259,17 @@ export default function Carousel({ items, type }) {
                 />
                 {item.type ? (
                   <div>
-                    <input type="radio" id="select" className="w-4 mt-2" />
+                    <input
+                      type="radio"
+                      name="btn"
+                      id="selected"
+                      className="w-4 mt-2"
+                    />
 
                     <input
                       type="radio"
                       id="select"
+                      name="btn"
                       className="w-4 mt-2 h-auto"
                     />
                   </div>
