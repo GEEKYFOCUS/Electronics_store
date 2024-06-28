@@ -4,19 +4,18 @@ import { LuEye } from "react-icons/lu";
 
 function WishList() {
   return (
-    <div className="md:px-8">
-      <div className="flex justify-between py-6">
-        <h1 className="text-2xl font-semibold">Wishlist (4)</h1>
-        <button className="border py-2 px-6 font-semibold mx-12">
+    <div className="md:px-8 my-10">
+      <div className="flex justify-between items-center py-6 gap-6 md:gap-0">
+        <h1 className="md:text-2xl text-lg font-semibold">Wishlist (4)</h1>
+        <button className="border py-2 lg:px-6 px-2 font-semibold lg:mx-12">
           Move All To Bag
         </button>
       </div>
 
-      {/* items */}
-      <div className="grid grid-cols-4">
+      <div className="grid lg:grid-cols-4 gap-2 grid-cols-2">
         <div>
           <div className="bg-[#f5f5f5] rounded-md w-fit h-fit">
-            <div className="flex justify-between px-3 py-3 items-center">
+            <div className="flex justify-between px-3 lg:py-3 py-2 items-center">
               <span className="bg-[#db4444] px-2 rounded-lg text-white">
                 -35%
               </span>
@@ -29,7 +28,7 @@ function WishList() {
               <img src="img/bag.png" alt="bag" className="w-fit object-cover" />
             </div>
 
-            <div className="flex bg-black text-white items-center gap-2 py-3 rounded-b-md justify-center">
+            <div className="flex cursor-pointer bg-black text-white items-center gap-2 py-3 rounded-b-md justify-center">
               <IoCartOutline />
               <button>Add to cart</button>
             </div>
@@ -134,19 +133,19 @@ function WishList() {
         </div>
       </div>
 
-      <div className="flex justify-between my-16">
+      <div className="flex justify-between items-center py-6 gap-6 md:gap-0">
         <div className="flex gap-4">
           <div className="bg-[#db4444] w-5 rounded-l-md"></div>
           <h1 className="text-2xl font-semibold">Just For You</h1>
         </div>
-        <button className="border py-2 px-6 font-semibold mx-12">
+        <button className="border py-2 px-6 font-semibold lg:mx-12">
           See All
         </button>
       </div>
 
       {/* view product */}
 
-      <div className="grid grid-cols-4 my-6 py-8">
+      <div className="grid lg:grid-cols-4 gap-2 grid-cols-2">
         <div>
           <div className="bg-[#f5f5f5] rounded-md w-fit h-fit ">
             <div className="flex justify-between px-3 py-2 items-center">

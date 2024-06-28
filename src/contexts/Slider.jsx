@@ -14,7 +14,6 @@ function SliderProvider({ children }) {
   const handleNextClick = () => {
     setCurrentIndex((prevIndex) => (prevIndex + 1) % items.length);
   };
-  console.log(items);
   return (
     <SliderContext.Provider
       value={{ items, currentIndex, handlePrevClick, handleNextClick }}

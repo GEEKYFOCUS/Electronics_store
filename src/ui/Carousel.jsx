@@ -2,15 +2,16 @@ import { useState } from "react";
 import { IoHeartOutline } from "react-icons/io5";
 import { AiOutlineEye } from "react-icons/ai";
 import { formatCurrency } from "../utils/helpers";
-import { BiSolidLeftArrowSquare } from "react-icons/bi";
+// import { BiSolidLeftArrowSquare } from "react-icons/bi";
 import StarRating from "./StarRating";
 import { useSlider } from "../contexts/Slider";
-import { stringify } from "postcss";
+// import { stringify } from "postcss";
 
 export default function Carousel({ items, type }) {
   const { currentIndex } = useSlider();
+  // const [cartItems, setCartItems] = useState();
 
-  const [rating, setRating] = useState("");
+  const [ setRating] = useState("");
 
   const getVisibleItems = () => {
     const start = currentIndex;
@@ -19,8 +20,16 @@ export default function Carousel({ items, type }) {
       for (let i = 0; i < 4; i++) {
         visibleItems.push(items[(start + i) % items.length]);
       }
+    // setCartItems(visibleItems);
     return visibleItems;
   };
+
+  // const { id, image, name, price } = visibleItems;
+  // console.log(cartItems);
+
+  function handleCart(id) {
+    console.log(id.target);
+  }
 
   const visibleItems = getVisibleItems();
   if (type === "today")
@@ -65,7 +74,10 @@ export default function Carousel({ items, type }) {
               <span> Add to cart</span>
             </button> */}
               <div className="flex flex-col gap-y-1 mt-3 mb-1">
-                <button className="bg-black text-white w-full text-center py-2 font-inter font-[400] -translate-y-8 hover:bg-black/90">
+                <button
+                  onClick={handleCart}
+                  className="bg-black text-white w-full text-center py-2 font-inter font-[400] -translate-y-8 hover:bg-black/90"
+                >
                   Add to cart
                 </button>
                 <h3 className="text-md font-[500] font-poppin">{item.name}</h3>

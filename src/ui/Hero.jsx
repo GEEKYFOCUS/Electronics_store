@@ -4,14 +4,12 @@ import { Product_preview } from "../constants/product_preview";
 import { useState } from "react";
 function Hero() {
   const [activeContent, setActiveContent] = useState(0);
-  console.log(activeContent);
   function handleClick(id) {
     // console.log(index);
     setActiveContent(id);
   }
   const productSlider = Product_preview.at(activeContent);
 
-  console.log(productSlider);
   return (
     <div className=" pt-16  pl-8 flex-1 relative">
       <div className="bg-black flex pt-12 py-5 justify-center font-poppin  rounded-sm ">
