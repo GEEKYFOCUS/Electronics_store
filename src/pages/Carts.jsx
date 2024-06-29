@@ -1,11 +1,20 @@
-import { NavLink, useLocation } from "react-router-dom";
+import { Link, NavLink, useLocation } from "react-router-dom";
 import Button from "../ui/Button";
 import RedButton from "../ui/RedButton";
+import { useSelector } from "react-redux";
+import CartItem from "../features/cart/CartItem";
+import { getTotalCartPrice } from "../features/cart/cartSlice";
+import { formatCurrency } from "../utils/helpers";
 
 function Carts() {
-  const { pathName, path } = useLocation;
+  const { pathName, path } = useLocation();
   console.log(pathName);
   console.log(path);
+  const cart = useSelector((state) => state.cart.cart);
+
+  const totalPrice = useSelector(getTotalCartPrice);
+  console.log(totalPrice);
+  console.log(cart);
 
   return (
     <div className="md:px-12 my-24">
@@ -21,36 +30,22 @@ function Carts() {
           <p>Quantity</p>
           <p>Subtotal</p>
         </div>
-
-        <div className="py-6 grid my-8 grid-cols-4 items-center md:space-x-10 space-x-4 md:px-6">
-          <div className="flex items-center md:gap-4 gap-2">
-            <img src="img/screen.png" alt="" className="md:w-[20%] w-[35%]" />
-            <p>LCD Monitor</p>
-          </div>
-          <p>$650</p>
-          <input
-            type="number"
-            name=""
-            id=""
-            value="01"
-            className="w-[22%] border md:px-3 md:py-2 border-black rounded-sm"
-          />
-          <p>$650</p>
-        </div>
-        <div className="py-6 grid my-8 grid-cols-4 items-center md:space-x-10 space-x-4 md:px-6">
-          <div className="flex items-center md:gap-4 gap-2">
-            <img src="img/redpad.png" alt="" className="w-[20%]" />
-            <p>H1 Gamepad</p>
-          </div>
-          <p>$550</p>
-          <input
-            type="number"
-            name=""
-            id=""
-            value="02"
-            className="w-[22%] border md:px-3 md:py-2 border-black rounded-sm"
-          />
-          <p>$1110</p>
+        <div className="">
+          {cart.length === 0 && (
+            <div className="md:py-4 sm:py-2 lg:py-5 text-center">
+              <p className="font-inter mb-8">
+                Your Cart is empty! Please start by adding an item to your cart
+              </p>
+              <Button to="/home">Go back home &rarr;</Button>
+            </div>
+          )}
+          {cart.length !== 0 && (
+            <div className="py-6 space-y-4  grid my-8 grid-cols-4 items-center md:space-x-10 space-x-4 md:px-6">
+              {cart.map((item) => (
+                <CartItem item={item} key={item.id} />
+              ))}
+            </div>
+          )}
         </div>
       </div>
 
@@ -73,7 +68,7 @@ function Carts() {
           <h1 className="font-semibold text-lg">Cart Total</h1>
           <div className="flex justify-between border-b border-slate-600 py-4 items-center gap-12">
             <p>Subtotal:</p>
-            <p>$1750</p>
+            <p>{formatCurrency(totalPrice)} </p>
           </div>
           <div className="flex justify-between border-b border-slate-600 py-4 items-center gap-12">
             <p>Shipping:</p>
@@ -81,7 +76,7 @@ function Carts() {
           </div>
           <div className="flex justify-between font-semibold py-4 items-center gap-12">
             <p>Total:</p>
-            <p>$1750</p>
+            <p>{formatCurrency(totalPrice)} </p>
           </div>
           <button className="border py-3 px-12 my-2 flex justify-center mx-auto bg-[#db4444] cursor-pointer text-white rounded-md">
             Proceed to checkout{" "}
