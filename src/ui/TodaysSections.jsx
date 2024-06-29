@@ -17,12 +17,12 @@ function TodaysSections() {
       </h2>
       <div className=" flex items-center content-center justify-center gap-x-28">
         <h2 className="font-inter text-4xl  font-bold"> Flash Sales</h2>
-        <SalesCountDown />
-        <ArrowButton />
+        <SalesCountDown type="today" />
+        <ArrowButton type="arrow" />
       </div>
 
       <Carousel items={items} type="today" />
-      <div className="text-center mt-8 pb-2 border-b">
+      <div className="text-center mt-8 pb-2 ">
         <button className="  text-center text-white bg-red-500 px-4 py-2 rounded-sm font-inter font-[500]">
           View All Products
         </button>

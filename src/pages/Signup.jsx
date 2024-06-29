@@ -4,7 +4,7 @@ import Header from "../ui/NavBar";
 function Signup() {
   return (
     <div>
-      <Header />
+      {/* <Header /> */}
       <SignupForm />
     </div>
   );
