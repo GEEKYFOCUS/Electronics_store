@@ -42,7 +42,7 @@ function App() {
                   </ProtectedRoute>
                 }
               >
-                <Route index element={<Navigate replace to="/home" />} />
+                <Route index element={<Navigate replace to="home" />} />
                 <Route path="home" element={<HomePage />} />
                 <Route path="about" element={<About />} />
                 <Route path="contact" element={<Contact />} />

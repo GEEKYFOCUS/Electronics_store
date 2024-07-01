@@ -1,10 +1,9 @@
-import { NavLink } from "react-router-dom";
-import Header from "./NavBar";
+import { Link, NavLink } from "react-router-dom";
 
 const navLinks = [
   {
     name: "Home",
-    href: "/homepage",
+    href: "/home",
   },
   {
     name: "Contact",
@@ -25,7 +24,9 @@ function Navigation() {
       <ul className="list-none flex gap-12">
         {navLinks.map((link) => (
           <li key={link.name}>
-            <NavLink href={link.href}>{link.name}</NavLink>
+            <NavLink to={link.href} onClick={() => console.log(link.name)}>
+              {link.name}
+            </NavLink>
           </li>
         ))}
       </ul>

@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import useCurrentUser from "../features/authentication/useCurrentUser";
 
 function ProtectedRoute({ children }) {
-  console.log(children);
+  // console.log(children);
   const navigate = useNavigate();
   //1 Load the authenticated user
   //2 If there is no authenticated user redirect to /Login page

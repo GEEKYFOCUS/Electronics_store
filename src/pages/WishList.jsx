@@ -324,13 +324,29 @@
 import React from "react";
 import { FaRegTrashAlt } from "react-icons/fa";
 import { IoCartOutline } from "react-icons/io5";
-import { LuEye } from "react-icons/lu";
-import products from "../constants/WishProduct"; // Make sure to import the products array
+// import { LuEye } from "react-icons/lu";
+import products from "../constants/WishProduct";
+import { addToCart } from "../features/cart/cartSlice";
+import { useDispatch } from "react-redux";
 
 const ProductList = () => {
+  const dispatch = useDispatch();
+
+  function handleCartItem(product) {
+    const newItem = {
+      id: product.id,
+      name: product.name,
+      quantity: 1,
+      price: product.price * 1,
+      image: product.image,
+    };
+    dispatch(addToCart(newItem));
+    console.log(newItem);
+  }
+
   return (
     <>
-      <div className="grid lg:grid-cols-4 gap-2 grid-cols-2">
+      <div className="grid lg:grid-cols-4 gap-2 grid-cols-2 md:m-16">
         {products.map((product, index) => (
           <div key={index}>
             <div className="bg-[#f5f5f5] rounded-md w-fit h-fit">
@@ -355,7 +371,9 @@ const ProductList = () => {
 
               <div className="flex cursor-pointer bg-black text-white items-center gap-2 py-3 rounded-b-md justify-center">
                 <IoCartOutline />
-                <button>Add to cart</button>
+                <button onClick={() => handleCartItem(product)}>
+                  Add to cart
+                </button>
               </div>
             </div>
             <div className="py-2 font-semibold">
