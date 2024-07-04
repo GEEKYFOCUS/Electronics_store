@@ -1,5 +1,6 @@
 import { useForm } from "react-hook-form";
 import { useSignup } from "./useSignup";
+import { Link } from "react-router-dom";
 
 function SignupForm() {
   const { register, formState, handleSubmit, reset } = useForm();
@@ -97,7 +98,9 @@ function SignupForm() {
 
         <span className="flex space-x-3 py-2">
           <p>Already have account?</p>
-          <p className="underline">Log in</p>
+          <Link to="/login" className="underline">
+            Log in
+          </Link>
         </span>
       </div>
     </div>
