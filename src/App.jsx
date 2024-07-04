@@ -15,6 +15,7 @@ import PageNotFound from "./pages/PageNotFound";
 import { Provider } from "react-redux";
 import store from "./store";
 import "./index.css";
+import { Toaster } from "react-hot-toast";
 import { SliderProvider } from "./contexts/Slider";
 import ProtectedRoute from "./ui/ProtectedRoute";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
@@ -46,7 +47,8 @@ function App() {
                 <Route path="home" element={<HomePage />} />
                 <Route path="about" element={<About />} />
                 <Route path="contact" element={<Contact />} />
-                <Route path="checkout/:orderId" element={<Checkout />} />
+                {/* <Route path="checkout/:orderId" element={<Checkout />} /> */}
+                <Route path="checkout" element={<Checkout />} />
                 <Route path="carts" element={<Carts />} />
                 <Route path="account" element={<Account />} />
                 <Route path="product/:id" element={<Product />} />
@@ -58,6 +60,27 @@ function App() {
               <Route path="*" element={<PageNotFound />} />
             </Routes>
           </BrowserRouter>
+
+          <Toaster
+            position="top-center"
+            gutter={12}
+            containerStyle={{ margin: "8px" }}
+            toastOptions={{
+              success: {
+                duration: 3000,
+              },
+              error: {
+                duration: 5000,
+              },
+              style: {
+                fontSize: "16px",
+                maxWidth: "500px",
+                padding: "16px 24px",
+                backgroundColor: "var(--color-grey-0)",
+                color: "var(--color-grey-700)",
+              },
+            }}
+          />
         </QueryClientProvider>
       </Provider>
     </SliderProvider>

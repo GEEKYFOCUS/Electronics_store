@@ -1,11 +1,10 @@
+import { useState } from "react";
 import { ImAppleinc } from "react-icons/im";
 import { Link } from "react-router-dom";
 import { Product_preview } from "../constants/product_preview";
-import { useState } from "react";
 function Hero() {
   const [activeContent, setActiveContent] = useState(0);
   function handleClick(id) {
-    // console.log(index);
     setActiveContent(id);
   }
   const productSlider = Product_preview.at(activeContent);

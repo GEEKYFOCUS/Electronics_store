@@ -1,4 +1,35 @@
+// import { PaystackButton } from "react-paystack";
+import { useState } from "react";
+import toast from "react-hot-toast";
+import { useSelector } from "react-redux";
+import { getTotalCartPrice } from "../features/cart/cartSlice";
+import { usePaystack } from "../features/cart/usePaystack";
+
 function Checkout() {
+  const [name, setName] = useState("");
+  const [phone, setPhone] = useState();
+  const [email, setEmail] = useState();
+
+  const cart = useSelector((state) => state.cart.cart);
+  const totalPrice = useSelector(getTotalCartPrice);
+  const publicKey = "pk_test_dcfa3d8202774206e8f20cc79886e77e10fc9862";
+  const amount = totalPrice * 100;
+
+  const onSuccess = () =>
+    toast.success("Thanks for doing business with us! Come back soon!!");
+  const onClose = () => toast.error("Wait! Don't leave :(");
+
+  const { initializePayment } = usePaystack({
+    email,
+    amount,
+    name,
+    phone,
+    publicKey,
+    onSuccess,
+    onClose,
+  });
+  console.log(name);
+
   return (
     <div className="my-24 lg:px-12">
       <h1 className="font-semibold text-3xl py-6">Billing Details</h1>
@@ -10,13 +41,17 @@ function Checkout() {
             <input
               type="text"
               name=""
+              value={name}
+              onChange={(e) => setName(e.target.value)}
               className="bg-[#f5f5f5] rounded-md p-4 px-4 w-full lg:w-[35rem]"
             />
           </div>
           <div>
-            <p className="py-4 opacity-50">Town/City*</p>
+            <p className="py-4 opacity-50">Phone Number*</p>
             <input
-              type="text"
+              type="number"
+              value={phone}
+              onChange={(e) => setPhone(e.target.value)}
               name=""
               className="bg-[#f5f5f5] rounded-md p-4 px-4 w-full"
             />
@@ -26,6 +61,8 @@ function Checkout() {
             <input
               type="text"
               name=""
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
               className="bg-[#f5f5f5] rounded-md p-4 px-4 w-full"
             />
           </div>
@@ -40,35 +77,45 @@ function Checkout() {
 
         <div className="md:w-[38%] mt-8 md:mt-0">
           <div>
-            <div className="flex justify-between items-center">
+            {/* <div className="flex justify-between items-center">
               <div className="gap-3 flex items-center">
                 <img src="/img/redpad.png" alt="" className="w-[18%]" />
                 <p>LCD Monitor</p>
               </div>
               <p>$650</p>
-            </div>
+            </div> */}
 
-            <div className="flex justify-between my-4 items-center">
+            {cart.map((item) => (
+              <div className="flex justify-between items-center">
+                <div className="gap-3 flex items-center">
+                  <img src={item.image} alt={item.image} className="w-[18%]" />
+                  <p>{item.name}</p>
+                </div>
+                <p>${item.price}</p>
+              </div>
+            ))}
+
+            {/* <div className="flex justify-between my-4 items-center">
               <div className="gap-2 flex items-center">
                 <img src="/img/screen.png" alt="" className="w-[20%]" />
                 <p>H1 Gamepad</p>
               </div>
               <p>$650</p>
-            </div>
+            </div> */}
           </div>
 
           <div>
             <div className="flex justify-between border-b border-slate-600 py-4 items-center gap-12">
               <p>Subtotal:</p>
-              <p>$1750</p>
+              <p>${totalPrice}</p>
             </div>
             <div className="flex justify-between border-b border-slate-600 py-4 items-center gap-12">
-              <p>Subtotal:</p>
+              <p>Shipping:</p>
               <p>Free</p>
             </div>
             <div className="flex justify-between font-semibold py-4 items-center gap-12">
               <p>Total:</p>
-              <p>$1750</p>
+              <p>${totalPrice}</p>
             </div>
           </div>
 
@@ -108,7 +155,11 @@ function Checkout() {
               </button>
             </div>
           </div>
-          <button className="border py-3 px-16 my-4 bg-[#db4444] cursor-pointer text-white rounded-md">
+
+          <button
+            className="payButton border py-3 px-16 my-4 bg-[#db4444] cursor-pointer text-white rounded-md"
+            onClick={() => initializePayment(onSuccess, onClose)}
+          >
             Place order
           </button>
         </div>

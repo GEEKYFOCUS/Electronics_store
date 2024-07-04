@@ -341,7 +341,6 @@ const ProductList = () => {
       image: product.image,
     };
     dispatch(addToCart(newItem));
-    console.log(newItem);
   }
 
   return (

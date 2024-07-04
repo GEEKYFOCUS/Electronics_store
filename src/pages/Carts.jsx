@@ -1,15 +1,19 @@
-import { NavLink, useLocation } from "react-router-dom";
-import Button from "../ui/Button";
-import RedButton from "../ui/RedButton";
 import { useSelector } from "react-redux";
+import { NavLink, useNavigate } from "react-router-dom";
 import CartItem from "../features/cart/CartItem";
 import { getTotalCartPrice } from "../features/cart/cartSlice";
+import Button from "../ui/Button";
+import RedButton from "../ui/RedButton";
 import { formatCurrency } from "../utils/helpers";
 
 function Carts() {
-  const cart = useSelector((state) => state.cart.cart);
-
   const totalPrice = useSelector(getTotalCartPrice);
+  const cart = useSelector((state) => state.cart.cart);
+  const navigate = useNavigate();
+
+  function handleCheckout() {
+    navigate("/checkout");
+  }
 
   return (
     <div className="md:px-12 my-24">
@@ -35,7 +39,7 @@ function Carts() {
             </div>
           )}
           {cart.length !== 0 && (
-            <div className="py-6 space-y-4  grid my-8 grid-cols-4 items-center md:space-x-10 space-x-4 md:px-6">
+            <div className="py-6 space-y-4 grid my-8 grid-cols-4 items-center md:space-x-10 space-x-4 md:px-6">
               {cart.map((item) => (
                 <CartItem item={item} key={item.id} />
               ))}
@@ -73,7 +77,11 @@ function Carts() {
             <p>Total:</p>
             <p>{formatCurrency(totalPrice)} </p>
           </div>
-          <button className="border py-3 px-12 my-2 flex justify-center mx-auto bg-[#db4444] cursor-pointer text-white rounded-md">
+          <button
+            onClick={handleCheckout}
+            disabled={!totalPrice}
+            className="border py-3 px-12 my-2 flex justify-center mx-auto bg-[#db4444] cursor-pointer text-white rounded-md"
+          >
             Proceed to checkout{" "}
           </button>
         </div>

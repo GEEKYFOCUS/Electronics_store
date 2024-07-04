@@ -35,7 +35,7 @@ function SignupForm() {
               placeholder="Name"
               name="name"
               id="name"
-              className="w-[80%] py-4 border-b-2 outline-none"
+              className="w-[80%] px-2 py-4 border-b-2 outline-none"
               required
               {...register("fullName", {
                 required: "This is field is require",
@@ -49,7 +49,7 @@ function SignupForm() {
               placeholder="Email or Phone Number"
               name="email"
               id="email"
-              className="w-[80%] py-4 border-b-2 outline-none"
+              className="w-[80%] px-2 py-4 border-b-2 outline-none"
               required
               {...register("email", {
                 required: "This field is required ",
@@ -68,7 +68,7 @@ function SignupForm() {
               autoComplete="current-password"
               name=""
               id="password"
-              className="w-[80%] py-4 border-b-2 outline-none"
+              className="w-[80%] py-4 px-2 border-b-2 outline-none"
               {...register("password", {
                 required: "This field is required",
                 minLength: {
