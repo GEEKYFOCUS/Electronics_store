@@ -58,35 +58,37 @@ function BestSellingItem({ item, index }) {
         <img
           src={item.image}
           alt={item.name}
-          className="max-w-40 w-full h-[10rem]  object-contain  -translate-y-8 pl-8 "
+          className="md:max-w-40 w-full h-[10rem]  object-contain  -translate-y-8 pl-8 "
         />
       </div>
       {/* <button className="bg-black text-white w-full text-center  py-2 font-inter  hover:bg-black/70">
                 <span> Add to cart</span>
               </button> */}
-      <div className="flex flex-col gap-y-1 mt-3 mb-1">
+      <div className="flex flex-col gap-y-1 mt-3 mb-1 ">
         {isItemInCart ? (
           <DeleteItemButton itemId={item.id} />
         ) : (
           <button
             onClick={() => handleAddToCart(item)}
-            className="bg-black text-white w-full text-center py-2 font-inter font-[400] -translate-y-8 hover:bg-black/90"
+            className="bg-black text-white w-full text-center py-2 sm:text-base text-sm font-inter font-[400] -translate-y-8 hover:bg-black/90"
           >
             Add to cart
           </button>
         )}
-        <h3 className="text-md font-[500] font-poppin">{item.name}</h3>
+        <h3 className="sm:text-md text-sm font-[500] font-poppin ">
+          {item.name}
+        </h3>
         <p className="text-gray-600 space-x-2 ">
-          <span className="text-lg text-orange-600 font-[400]">
+          <span className="sm:text-lg text-md  text-orange-600 font-[400]">
             {formatCurrency(item.price - item.discount)}
           </span>
-          <span className="text-sm text-black font-[400] !line-through">
+          <span className="sm:text-sm text-[.89rem] text-black font-[400] !line-through">
             {formatCurrency(item.price)}
           </span>
         </p>
         <StarRating
           maxRating={5}
-          size={20}
+          size={18}
           color="red"
           onSetRating={setRating}
         />

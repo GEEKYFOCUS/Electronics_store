@@ -19,6 +19,7 @@ import { Toaster } from "react-hot-toast";
 import { SliderProvider } from "./contexts/Slider";
 import ProtectedRoute from "./ui/ProtectedRoute";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import { HamburgerProvider } from "./contexts/Hamburger";
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -32,6 +33,7 @@ const queryClient = new QueryClient({
 function App() {
   return (
     <SliderProvider>
+<<<<<<< HEAD
       <Provider store={store}>
         <QueryClientProvider client={queryClient}>
           <BrowserRouter>
@@ -83,6 +85,39 @@ function App() {
           />
         </QueryClientProvider>
       </Provider>
+=======
+      <HamburgerProvider>
+        <Provider store={store}>
+          <QueryClientProvider client={queryClient}>
+            <BrowserRouter>
+              <Routes>
+                <Route
+                  element={
+                    <ProtectedRoute>
+                      <AppLayout />
+                    </ProtectedRoute>
+                  }
+                >
+                  <Route index element={<Navigate replace to="home" />} />
+                  <Route path="home" element={<HomePage />} />
+                  <Route path="about" element={<About />} />
+                  <Route path="contact" element={<Contact />} />
+                  <Route path="checkout/:orderId" element={<Checkout />} />
+                  <Route path="carts" element={<Carts />} />
+                  <Route path="account" element={<Account />} />
+                  <Route path="product/:id" element={<Product />} />
+                  <Route path="wishlist" element={<WishList />} />
+                  <Route path="category" element={<Category />} />
+                </Route>
+                <Route path="login" element={<Login />} />
+                <Route path="signup" element={<Signup />} />
+                <Route path="*" element={<PageNotFound />} />
+              </Routes>
+            </BrowserRouter>
+          </QueryClientProvider>
+        </Provider>
+      </HamburgerProvider>
+>>>>>>> 8e9a510ca2bc7b979662881220b1b3dedeb39272
     </SliderProvider>
   );
 }

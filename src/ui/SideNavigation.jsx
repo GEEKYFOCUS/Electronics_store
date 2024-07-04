@@ -4,7 +4,7 @@ import { HiOutlineChevronRight } from "react-icons/hi2";
 function SideNavigation() {
   return (
     <>
-      <ul className="flex flex-col basis-1/6 list-none gap-2 pt-16 border-r  border-r-stone-200">
+      <ul className=" hidden md:flex flex-col basis-1/6 list-none gap-2 pt-16 border-r text-sm sm:text-md md:text-base border-r-stone-200">
         <li className="px-2">
           <Link className="flex justify-between items-center content-center">
             <span>Women's fashion</span>

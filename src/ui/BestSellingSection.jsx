@@ -8,12 +8,12 @@ function BestSellingSection() {
   const { bestSelling } = useSlider();
   return (
     <section className="mt-8 pt-4 pb-12    ">
-      <h2 className="before:content-['-'] before:mr-4 before:rounded-md before:bg-red-500 before:h-12 before:w-6  before:inline-block   text-red-500 font-bold text-xl ">
+      <h2 className="before:content-['-'] sm:before:mr-4  before:mr-2  before:rounded-md before:bg-red-500 md:before:h-12 before:h-10 md:before:w-6 before:w-4  before:inline-block   text-red-500 font-bold md:text-xl sm:text-lg text-md ">
         <span className="inline-block align-middle">This month</span>
         {/* Today's */}
       </h2>
       <div className=" flex items-center content-center justify-between gap-x-28">
-        <h2 className="font-inter text-4xl  font-bold">
+        <h2 className="font-inter lg:text-4xl md:text-2xl sm:text-lg text-sm   font-bold">
           {" "}
           Best Selling Product
         </h2>

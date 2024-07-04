@@ -1,5 +1,9 @@
 import React, { useState } from "react";
+<<<<<<< HEAD
 // import { useNavigate } from "react-router-dom";
+=======
+import { Link, useNavigate } from "react-router-dom";
+>>>>>>> 8e9a510ca2bc7b979662881220b1b3dedeb39272
 import useLogin from "./useLogin";
 
 function LoginForm() {
@@ -68,7 +72,9 @@ function LoginForm() {
             <button className="bg-[#db4444] py-3 px-10 text-white font-semibold">
               Log In
             </button>
-            <p className="font-semibold text-[#db4444]">Forget Password?</p>
+            <Link to="/signup" className="font-semibold text-[#db4444]">
+              Forget Password?
+            </Link>
           </div>
         </form>
       </div>

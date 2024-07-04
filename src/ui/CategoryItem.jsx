@@ -1,7 +1,3 @@
-import { useDispatch, useSelector } from "react-redux";
-import { addToCart, getTotalQuantityById } from "../features/cart/cartSlice";
-import { useState } from "react";
-
 function CategoryItem({ item, index }) {
   return (
     <div
