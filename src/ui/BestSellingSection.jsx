@@ -2,7 +2,6 @@ import { useSlider } from "../contexts/Slider";
 import ArrowButton from "./ArrowButton";
 import Carousel from "./Carousel";
 import Categories from "./Categories";
-import SalesCountDown from "./SalesCountDown";
 
 function BestSellingSection() {
   const { bestSelling } = useSlider();

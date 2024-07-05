@@ -1,8 +1,6 @@
 import Logo from "./Logo";
 
-import { Link, NavLink } from "react-router-dom";
-import styles from "./Navigation.module.css";
-import HeaderMenu from "./HeaderMenu";
+import { NavLink } from "react-router-dom";
 import { useHamburger } from "../contexts/Hamburger";
 
 const navLinks = [

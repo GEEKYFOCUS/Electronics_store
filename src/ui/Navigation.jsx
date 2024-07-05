@@ -1,5 +1,4 @@
-import { Link, NavLink } from "react-router-dom";
-import styles from "./Navigation.module.css";
+import { NavLink } from "react-router-dom";
 
 const navLinks = [
   {
@@ -32,7 +31,7 @@ function Navigation() {
                   : "text-gray-400 hover:text-black/80 md:text-base   sm:text-sm"
               }
               to={link.href}
-              onClick={() => console.log(link.name)}
+              // onClick={() => console.log(link.name)}
             >
               {link.name}
             </NavLink>

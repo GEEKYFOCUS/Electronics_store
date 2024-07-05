@@ -1,9 +1,6 @@
 import React, { useState } from "react";
-<<<<<<< HEAD
 // import { useNavigate } from "react-router-dom";
-=======
-import { Link, useNavigate } from "react-router-dom";
->>>>>>> 8e9a510ca2bc7b979662881220b1b3dedeb39272
+import { Link } from "react-router-dom";
 import useLogin from "./useLogin";
 
 function LoginForm() {
@@ -25,7 +22,6 @@ function LoginForm() {
       }
     );
 
-    console.log("user signed in successfully");
   }
   return (
     <div className="md:flex lg:gap-20 md:gap-12 items-center md:justify-between">
@@ -38,13 +34,6 @@ function LoginForm() {
 
         <form onSubmit={handleSubmit}>
           <div className="py-4">
-            {/* <input
-            type="text"
-            placeholder="Name"
-            name="name"
-            id="name"
-            className="w-[80%] py-4 border-b-2 outline-none"
-            /> */}
             <input
               type="text"
               placeholder="Email or Phone Number"

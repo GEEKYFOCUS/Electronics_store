@@ -1,22 +1,12 @@
 import { useState } from "react";
-import { AiOutlineEye } from "react-icons/ai";
-import { IoHeartOutline } from "react-icons/io5";
 import { useDispatch, useSelector } from "react-redux";
 import { useSlider } from "../contexts/Slider";
 import { addToCart } from "../features/cart/cartSlice";
-import { formatCurrency } from "../utils/helpers";
-import BestSellingItem from "./BestSellingItem";
-import CategoryItem from "./CategoryItem";
-import ProductItem from "./ProductItem";
-import StarRating from "./StarRating";
-import TodayItem from "./TodayItem";
-<<<<<<< HEAD
-=======
-import CategoryItem from "./CategoryItem";
-import BestSellingItem from "./BestSellingItem";
-import ProductItem from "./ProductItem";
 import useScreenWidth from "../hooks/useScreenWidth";
->>>>>>> 8e9a510ca2bc7b979662881220b1b3dedeb39272
+import BestSellingItem from "./BestSellingItem";
+import CategoryItem from "./CategoryItem";
+import ProductItem from "./ProductItem";
+import TodayItem from "./TodayItem";
 
 export default function Carousel({ items, type }) {
   const cart = useSelector((state) => state.cart.cart);
@@ -37,13 +27,8 @@ export default function Carousel({ items, type }) {
 
   console.log(cart);
   const { currentIndex } = useSlider();
-  // const [cartItems, setCartItems] = useState();
 
-  // <<<<<<< HEAD
-  // =======
   const [rating, setRating] = useState("");
-  console.log(rating);
-  // >>>>>>> 398a0c0184624c13c9897a5a1f1fd1fadbc05ca6
 
   const getVisibleItems = () => {
     const start = currentIndex;
@@ -80,20 +65,13 @@ export default function Carousel({ items, type }) {
       for (let i = 0; i < maxDisplay; i++) {
         visibleItems.push(items[(start + i) % items.length]);
       }
-<<<<<<< HEAD
-    // setCartItems(visibleItems);
-=======
     }
->>>>>>> 8e9a510ca2bc7b979662881220b1b3dedeb39272
     return visibleItems;
   };
 
-  // const { id, image, name, price } = visibleItems;
-  // console.log(cartItems);
-
-  function handleCart(id) {
-    console.log(id.target);
-  }
+  // function handleCart(id) {
+  //   console.log(id.target);
+  // }
 
   const visibleItems = getVisibleItems();
   if (type === "today")

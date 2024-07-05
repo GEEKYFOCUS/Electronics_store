@@ -1,20 +1,18 @@
+import { useState } from "react";
 import { AiOutlineEye } from "react-icons/ai";
 import { IoHeartOutline } from "react-icons/io5";
-import { formatCurrency } from "../utils/helpers";
-import StarRating from "./StarRating";
-import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { addToCart, getTotalQuantityById } from "../features/cart/cartSlice";
+import { formatCurrency } from "../utils/helpers";
 import DeleteItemButton from "./DeleteItemButton";
+import StarRating from "./StarRating";
 
 function BestSellingItem({ item, index }) {
   const [rating, setRating] = useState("");
   const cart = useSelector((state) => state.cart.cart);
-  console.log(cart);
   const dispatch = useDispatch();
   const currentQuantity = useSelector(getTotalQuantityById(item.id));
   const isItemInCart = currentQuantity > 0;
-  console.log(isItemInCart, currentQuantity);
 
   function handleAddToCart(item) {
     const newItem = {
