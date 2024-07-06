@@ -61,7 +61,7 @@ function LoginForm() {
               Log In
             </button>
             <Link to="/signup" className="font-semibold text-[#db4444]">
-              Forget Password?
+              Signup
             </Link>
           </div>
         </form>
