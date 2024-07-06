@@ -3,12 +3,7 @@ import { ImAppleinc } from "react-icons/im";
 import { Link } from "react-router-dom";
 import { Product_preview } from "../constants/product_preview";
 function Hero() {
-<<<<<<< HEAD
   const [activeContent, setActiveContent] = useState(0);
-=======
-  const [activeContent, setActiveContent] = useState(3);
-  console.log(activeContent);
->>>>>>> 8e9a510ca2bc7b979662881220b1b3dedeb39272
   function handleClick(id) {
     setActiveContent(id);
   }

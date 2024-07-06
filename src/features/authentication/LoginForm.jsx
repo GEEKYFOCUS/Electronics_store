@@ -1,10 +1,7 @@
 import React, { useState } from "react";
-<<<<<<< HEAD
 // import { useNavigate } from "react-router-dom";
-=======
-import { Link, useNavigate } from "react-router-dom";
->>>>>>> 8e9a510ca2bc7b979662881220b1b3dedeb39272
 import useLogin from "./useLogin";
+import { Link } from "react-router-dom";
 
 function LoginForm() {
   const [email, setEmail] = useState("");

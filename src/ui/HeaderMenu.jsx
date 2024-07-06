@@ -25,13 +25,8 @@ function HeaderMenu() {
           <IoSearchOutline className="text-xs md:text-base" />
         </span>
       </div>
-<<<<<<< HEAD
       <button className="p-2" onClick={handleWishList}>
         <HiOutlineHeart className="text-xl" />
-=======
-      <button className="p-2">
-        <HiOutlineHeart className="md:text-xl text-sm" />
->>>>>>> 8e9a510ca2bc7b979662881220b1b3dedeb39272
       </button>
 
       <Link
