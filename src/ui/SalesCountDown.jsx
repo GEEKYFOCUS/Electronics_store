@@ -12,7 +12,7 @@ function SalesCountDown({ type }) {
 
   function calculateTimeLeft() {
     if (type === "today") {
-      let difference = +new Date("2024-06-25") - +new Date();
+      let difference = +new Date("2024-07-30") - +new Date();
       let time = {};
 
       if (difference > 0) {
@@ -27,7 +27,7 @@ function SalesCountDown({ type }) {
       return time;
     }
     if (type === "categories") {
-      let difference = +new Date("2024-06-29") - +new Date();
+      let difference = +new Date("2024-07-30") - +new Date();
       let time = {};
 
       if (difference > 0) {

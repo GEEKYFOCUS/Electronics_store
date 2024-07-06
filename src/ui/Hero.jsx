@@ -4,7 +4,10 @@ import { Link } from "react-router-dom";
 import { Product_preview } from "../constants/product_preview";
 function Hero() {
   const [activeContent, setActiveContent] = useState(0);
+<<<<<<< HEAD
   // const [activeContent, setActiveContent] = useState(3);
+=======
+>>>>>>> 0bd787b9e2a6059bcd01a7a59c80f24e8e9161b2
   function handleClick(id) {
     setActiveContent(id);
   }

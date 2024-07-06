@@ -14,8 +14,10 @@ import Signup from "./pages/Signup";
 import PageNotFound from "./pages/PageNotFound";
 import { Provider } from "react-redux";
 import store from "./store";
-import "./index.css";
+// import {Toaster} from "react-hot-host"
 import { Toaster } from "react-hot-toast";
+import "./index.css";
+
 import { SliderProvider } from "./contexts/Slider";
 import ProtectedRoute from "./ui/ProtectedRoute";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
@@ -62,7 +64,10 @@ function App() {
                 <Route path="*" element={<PageNotFound />} />
               </Routes>
             </BrowserRouter>
+<<<<<<< HEAD
 
+=======
+>>>>>>> 0bd787b9e2a6059bcd01a7a59c80f24e8e9161b2
             <Toaster
               position="top-center"
               gutter={12}

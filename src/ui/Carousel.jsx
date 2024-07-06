@@ -29,6 +29,10 @@ export default function Carousel({ items, type }) {
   const { currentIndex } = useSlider();
 
   const [rating, setRating] = useState("");
+<<<<<<< HEAD
+=======
+  console.log(rating);
+>>>>>>> 0bd787b9e2a6059bcd01a7a59c80f24e8e9161b2
 
   const getVisibleItems = () => {
     const start = currentIndex;
@@ -65,6 +69,7 @@ export default function Carousel({ items, type }) {
       for (let i = 0; i < maxDisplay; i++) {
         visibleItems.push(items[(start + i) % items.length]);
       }
+<<<<<<< HEAD
     }
     return visibleItems;
   };
@@ -115,4 +120,60 @@ export default function Carousel({ items, type }) {
         </div>
       </div>
     );
+=======
+      // setCartItems(visibleItems);
+      return visibleItems;
+    }
+
+    // const { id, image, name, price } = visibleItems;
+    // console.log(cartItems);
+
+    function handleCart(id) {
+      console.log(id.target);
+    }
+
+    // const visibleItems = getVisibleItems();
+    if (type === "today")
+      return (
+        <div className="mt-12 flex justify-center ">
+          <div className=" grid lg:grid-cols-[1fr_1fr_1fr_1fr] md:grid-cols-[1fr_1fr]  grid-cols-[1fr] gap-8  overflow-hidden w-4/5  ">
+            {visibleItems.map((item, index) => (
+              <TodayItem item={item} index={index} key={index} />
+            ))}
+          </div>
+        </div>
+      );
+    if (type === "category")
+      return (
+        <div className="mt-12 px-2   flex">
+          <div className=" grid lg:grid-cols-[1fr_1fr_1fr_1fr_1fr_1fr] md:grid-cols-[1fr_1fr_1fr_1fr] grid-cols-[1fr] gap-4  overflow-hidden w-4/5 flex-1  ">
+            {visibleItems.map((item, index) => (
+              <CategoryItem item={item} index={index} key={index} />
+            ))}
+          </div>
+        </div>
+      );
+    if (type === "bestSelling")
+      return (
+        <div className="mt-12 flex justify-center ">
+          <div className=" grid lg:grid-cols-[1fr_1fr_1fr_1fr] md:grid-cols-[1fr_1fr] grid-cols-[1fr]  gap-8  overflow-hidden w-4/5  ">
+            {visibleItems.map((item, index) => (
+              <BestSellingItem item={item} index={index} key={index} />
+            ))}
+          </div>
+        </div>
+      );
+
+    if (type === "products")
+      return (
+        <div className="mt-12 flex justify-center ">
+          <div className=" grid lg:grid-cols-[1fr_1fr_1fr_1fr] md:grid-cols-[1fr_1fr] grid-cols-[1fr] gap-8  overflow-hidden w-4/5  flex-1 ">
+            {visibleItems.map((item, index) => (
+              <ProductItem item={item} index={index} key={index} />
+            ))}
+          </div>
+        </div>
+      );
+  };
+>>>>>>> 0bd787b9e2a6059bcd01a7a59c80f24e8e9161b2
 }
