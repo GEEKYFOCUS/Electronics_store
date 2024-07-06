@@ -29,10 +29,6 @@ export default function Carousel({ items, type }) {
   const { currentIndex } = useSlider();
 
   const [rating, setRating] = useState("");
-<<<<<<< HEAD
-=======
-  console.log(rating);
->>>>>>> 0bd787b9e2a6059bcd01a7a59c80f24e8e9161b2
 
   const getVisibleItems = () => {
     const start = currentIndex;
@@ -69,7 +65,6 @@ export default function Carousel({ items, type }) {
       for (let i = 0; i < maxDisplay; i++) {
         visibleItems.push(items[(start + i) % items.length]);
       }
-<<<<<<< HEAD
     }
     return visibleItems;
   };
@@ -78,7 +73,7 @@ export default function Carousel({ items, type }) {
   //   console.log(id.target);
   // }
 
-  const visibleItems = getVisibleItems();
+  const visibleItems = getVisibleItems()
   if (type === "today")
     return (
       <div className="mt-12 flex justify-center ">
@@ -120,20 +115,19 @@ export default function Carousel({ items, type }) {
         </div>
       </div>
     );
-=======
       // setCartItems(visibleItems);
-      return visibleItems;
-    }
+     
 
     // const { id, image, name, price } = visibleItems;
     // console.log(cartItems);
 
-    function handleCart(id) {
-      console.log(id.target);
-    }
+    // function handleCart(id) {
+    //   console.log(id.target);
+    // }
 
     // const visibleItems = getVisibleItems();
-    if (type === "today")
+    if (type === "today") {
+
       return (
         <div className="mt-12 flex justify-center ">
           <div className=" grid lg:grid-cols-[1fr_1fr_1fr_1fr] md:grid-cols-[1fr_1fr]  grid-cols-[1fr] gap-8  overflow-hidden w-4/5  ">
@@ -143,6 +137,7 @@ export default function Carousel({ items, type }) {
           </div>
         </div>
       );
+    }
     if (type === "category")
       return (
         <div className="mt-12 px-2   flex">
@@ -175,5 +170,4 @@ export default function Carousel({ items, type }) {
         </div>
       );
   };
->>>>>>> 0bd787b9e2a6059bcd01a7a59c80f24e8e9161b2
-}
+

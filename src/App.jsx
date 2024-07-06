@@ -64,10 +64,7 @@ function App() {
                 <Route path="*" element={<PageNotFound />} />
               </Routes>
             </BrowserRouter>
-<<<<<<< HEAD
 
-=======
->>>>>>> 0bd787b9e2a6059bcd01a7a59c80f24e8e9161b2
             <Toaster
               position="top-center"
               gutter={12}
