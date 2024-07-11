@@ -1,6 +1,7 @@
 import { useForm } from "react-hook-form";
 import { useSignup } from "./useSignup";
 import { Link } from "react-router-dom";
+import { FaGoogle } from "react-icons/fa";
 
 function SignupForm() {
   const { register, formState, handleSubmit, reset } = useForm();
@@ -90,8 +91,9 @@ function SignupForm() {
             <button className="bg-[#db4444] py-3 px-4 text-white font-semibold">
               Create Account
             </button>
-            <button className=" border text-black py-3 px-4 font-semibold">
-              Sign up with Google
+            <button className=" border gap-3 flex justify-center text-black py-3 px-4 font-semibold">
+              <FaGoogle size={24} />
+              <p>Sign up with Google</p>
             </button>
           </div>
         </form>
