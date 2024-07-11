@@ -18,7 +18,7 @@ function SideNavigation() {
           </Link>
         </li>
         <li className="px-2">
-          <Link>Electronis</Link>
+          <Link>Electronics</Link>
         </li>
         <li className="px-2">
           <Link>Home & LifeStyle</Link>

@@ -17,8 +17,8 @@ function HeaderMenu() {
       <div className="px-4 py-2 flex bg-[#F5F5F5] rounded-md">
         <input
           type="text"
-          placeholder="What are you looking for"
-          className="bg-transparent text-xs w-full outline-none border-none px-1 placeholder:text-xs placeholder:md:text-base"
+          placeholder="What are you looking for?"
+          className="bg-transparent text-xs w-full outline-none border-none pr-1 placeholder:text-[12px] placeholder:md:text-[12px]"
         />
         <span>
           <IoSearchOutline className="text-xs md:text-base" />
