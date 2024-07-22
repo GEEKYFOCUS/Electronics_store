@@ -38,6 +38,7 @@ function LoginForm() {
               placeholder="Email or Phone Number"
               name="email"
               id="email"
+              required
               className="w-[80%] py-4 border-b-2 outline-none"
               value={email}
               disabled={isLoading}
@@ -48,6 +49,7 @@ function LoginForm() {
               placeholder="Password"
               name="passoword"
               id="password"
+              required
               autoComplete="password"
               value={password}
               disabled={isLoading}
@@ -71,3 +73,6 @@ function LoginForm() {
 }
 
 export default LoginForm;
+
+// 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
+// 216831007349-jorsr2k2958d48vdbo62qcva1bc85o0b.apps.googleusercontent.com

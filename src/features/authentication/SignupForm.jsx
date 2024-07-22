@@ -2,6 +2,7 @@ import { useForm } from "react-hook-form";
 import { useSignup } from "./useSignup";
 import { Link } from "react-router-dom";
 import { FaGoogle } from "react-icons/fa";
+import { loginWithGoogle } from "../../services/apiAuth";
 
 function SignupForm() {
   const { register, formState, handleSubmit, reset } = useForm();
@@ -91,7 +92,13 @@ function SignupForm() {
             <button className="bg-[#db4444] py-3 px-4 text-white font-semibold">
               Create Account
             </button>
-            <button className=" border gap-3 flex justify-center text-black py-3 px-4 font-semibold">
+            <button
+              className=" border gap-3 flex justify-center text-black py-3 px-4 font-semibold"
+              onClick={() => {
+                console.log("CLicked");
+                loginWithGoogle();
+              }}
+            >
               <FaGoogle size={24} />
               <p>Sign up with Google</p>
             </button>
