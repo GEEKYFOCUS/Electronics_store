@@ -73,6 +73,3 @@ function LoginForm() {
 }
 
 export default LoginForm;
-
-// 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
-// 216831007349-jorsr2k2958d48vdbo62qcva1bc85o0b.apps.googleusercontent.com
