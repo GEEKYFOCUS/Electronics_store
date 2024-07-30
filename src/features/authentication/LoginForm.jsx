@@ -23,7 +23,7 @@ function LoginForm() {
     );
   }
   return (
-    <div className="md:flex lg:gap-20 md:gap-12 items-center md:justify-between">
+    <div className="md:flex gap-36 md:gap-12 items-center">
       <img src="img/signup.png" alt="signup" className="md:w-[50%]" />
       <div className="m-6">
         <div>

@@ -91,10 +91,6 @@ function SignupForm() {
             <button className="bg-[#db4444] py-3 px-4 text-white font-semibold">
               Create Account
             </button>
-            <button className=" border gap-3 flex justify-center text-black py-3 px-4 font-semibold">
-              <FaGoogle size={24} />
-              <p>Sign up with Google</p>
-            </button>
           </div>
         </form>
 
@@ -104,6 +100,11 @@ function SignupForm() {
             Log in
           </Link>
         </span>
+
+        <button className=" border my-5 w-[85%] gap-3 flex justify-center text-black py-3 px-4 font-semibold">
+          <FaGoogle size={24} />
+          <p>Sign up with Google</p>
+        </button>
       </div>
     </div>
   );

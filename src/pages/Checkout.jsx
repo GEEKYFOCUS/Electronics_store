@@ -151,7 +151,7 @@ function Checkout() {
                 className="rounded-md border border-black lg:px-4 px-2 py-3 outline-none"
               />
               <button className="border py-3 lg:px-4 px-2 bg-[#db4444] cursor-pointer text-white rounded-md">
-                Apply coupon
+                Apply coupon  
               </button>
             </div>
           </div>
