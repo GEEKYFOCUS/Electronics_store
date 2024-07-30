@@ -9,7 +9,8 @@ function ProtectedRoute({ children }) {
   //2 If there is no authenticated user redirect to /Login page
   //3 If there is an authenticated user render the protected route
 
-  const { isLoading, isAuthenticated } = useCurrentUser();
+  const { user, isLoading, isAuthenticated } = useCurrentUser();
+  console.log(user);
 
   useEffect(
     function () {

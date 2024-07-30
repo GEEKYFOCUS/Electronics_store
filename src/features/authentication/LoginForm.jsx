@@ -38,6 +38,7 @@ function LoginForm() {
               placeholder="Email or Phone Number"
               name="email"
               id="email"
+              required
               className="w-[80%] py-4 border-b-2 outline-none"
               value={email}
               disabled={isLoading}
@@ -48,6 +49,7 @@ function LoginForm() {
               placeholder="Password"
               name="passoword"
               id="password"
+              required
               autoComplete="password"
               value={password}
               disabled={isLoading}

@@ -34,4 +34,12 @@ export async function getCurrentUser() {
   if (error) throw new Error(error.message);
 
   return data?.user;
+  // return { data: data?.user, session };
+}
+
+export async function loginWithGoogle() {
+  const { data, error } = await supabase.auth.signInWithOAuth({
+    provider: "google",
+  });
+  return { data, error };
 }
