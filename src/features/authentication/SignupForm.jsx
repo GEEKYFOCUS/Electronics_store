@@ -92,6 +92,7 @@ function SignupForm() {
             <button className="bg-[#db4444] py-3 px-4 text-white font-semibold">
               Create Account
             </button>
+
             <button
               className=" border gap-3 flex justify-center text-black py-3 px-4 font-semibold"
               onClick={() => {
@@ -105,17 +106,17 @@ function SignupForm() {
           </div>
         </form>
 
-        <span className="flex space-x-3 py-2">
+        <span className="flex space-x-3 py-2 ">
           <p>Already have account?</p>
           <Link to="/login" className="underline">
             Log in
           </Link>
         </span>
 
-        <button className=" border my-5 w-[85%] gap-3 flex justify-center text-black py-3 px-4 font-semibold">
+        {/* <button className=" border my-5 w-[85%] gap-3 flex justify-center text-black py-3 px-4 font-semibold">
           <FaGoogle size={24} />
-          <p>Sign up with Google</p>
-        </button>
+          <p>Sign up with Google  </p>
+        </button> */}
       </div>
     </div>
   );
