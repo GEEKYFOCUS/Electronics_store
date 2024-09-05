@@ -92,8 +92,6 @@ function SignupForm() {
             <button className="bg-[#db4444] py-3 px-4 text-white font-semibold">
               Create Account
             </button>
-<<<<<<< HEAD
-=======
             <button
               className=" border gap-3 flex justify-center text-black py-3 px-4 font-semibold"
               onClick={() => {
@@ -104,7 +102,6 @@ function SignupForm() {
               <FaGoogle size={24} />
               <p>Sign up with Google</p>
             </button>
->>>>>>> 18a0c0b0b5c7d167ae9380879fb342cf8a258c1c
           </div>
         </form>
 
